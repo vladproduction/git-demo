@@ -6,3 +6,5 @@ line four of the song file
 line five of the song file
 line six of the song file
 
+line seven of the song file
+line eight of the song file
