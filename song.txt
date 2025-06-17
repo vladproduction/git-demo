@@ -2,3 +2,7 @@ line one of the song file
 line two of the song file
 line three of the song file
 line four of the song file
+
+line five of the song file
+line six of the song file
+
