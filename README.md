@@ -14,3 +14,7 @@
  - git pull
  - git gui&
  - gitk&
+ - git restore . 
+ - git restore [file name]
+ - git clean -xdf
+ - git reset HEAD~1
