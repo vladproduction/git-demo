@@ -10,10 +10,9 @@ line six of the song file
 line seven of the song file
 line eight of the song file
 
-//branch feature started and adding some to this file:
-
 line nine of the song file
 line ten of the song file
+<<<<<<< HEAD
 
 to resolve conflict, we have to making manually 
 updates for conflict part of the file:
@@ -22,3 +21,6 @@ updates for conflict part of the file:
  now conflict is resolved;
  
  commit #1
+
+from main: song commit #1
+//conflict resolved
