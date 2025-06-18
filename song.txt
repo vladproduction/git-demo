@@ -15,5 +15,8 @@ line eight of the song file
 line nine of the song file
 line ten of the song file
 
-need to resolve this conflict
-by adding or remove line
+to resolve conflict, we have to making manually 
+updates for conflict part of the file:
+ delete or add content that are conflicting;
+ eventually make the decision what is correct and save it;
+ now conflict is resolved;
