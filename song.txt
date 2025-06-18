@@ -15,3 +15,5 @@ line eight of the song file
 line nine of the song file
 line ten of the song file
 
+need to resolve this conflict
+by adding or remove line
