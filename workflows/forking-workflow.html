@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Forking Workflow</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      scroll-behavior: smooth;
+    }
+    .workflow-step:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
+    }
+    .svg-text {
+      font-size: 14px;
+      font-family: 'Inter', sans-serif;
+      fill: #374151;
+      text-anchor: middle;
+    }
+    .dark .svg-text {
+      fill: #d1d5db;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 antialiased">
+
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <header class="text-center mb-12">
+      <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+        Forking Workflow
+      </h1>
+      <p class="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+        A flexible Git collaboration model where contributors fork a public repository, push changes to their own copy, and submit pull requests. Ideal for open source projects with distributed contributors.
+      </p>
+    </header>
+
+    <!-- Workflow Graph Section -->
+    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 sm:p-8 mb-12">
+      <h3 class="text-2xl font-bold text-center mb-6 text-gray-900 dark:text-white">
+        Visual Workflow Diagram
+      </h3>
+      <div class="flex justify-center">
+        <img src="forking.svg" alt="My SVG Image" width="800" height="500" />
+      </div>
+    </div>
+
+    <!-- Concept -->
+    <div class="mb-12 text-center">
+      <h3 class="text-3xl font-bold mb-4 text-gray-900 dark:text-white">The Core Concept</h3>
+      <p class="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+        In the Forking Workflow, contributors don’t need access to the main repository. They simply fork it, make their changes in their own copies, and propose changes via pull requests. This is perfect for teams with many external contributors.
+      </p>
+    </div>
+
+    <!-- Steps -->
+    <div class="mt-12">
+      <h3 class="text-3xl font-bold text-center mb-8 text-gray-900 dark:text-white">Workflow Steps</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="workflow-step bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 text-center transition-all duration-300">
+          <div class="flex justify-center items-center mb-4 h-16 w-16 rounded-full bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 mx-auto">
+            <span class="text-2xl font-bold">1</span>
+          </div>
+          <h4 class="font-semibold text-lg mb-2">Fork the Repo</h4>
+          <p class="text-gray-500 dark:text-gray-400">Create a personal copy of the main project under your account.</p>
+        </div>
+        <div class="workflow-step bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 text-center transition-all duration-300">
+          <div class="flex justify-center items-center mb-4 h-16 w-16 rounded-full bg-purple-100 dark:bg-purple-900 text-purple-600 dark:text-purple-300 mx-auto">
+            <span class="text-2xl font-bold">2</span>
+          </div>
+          <h4 class="font-semibold text-lg mb-2">Clone and Modify</h4>
+          <p class="text-gray-500 dark:text-gray-400">Clone your fork locally, make your edits, and commit them.</p>
+        </div>
+        <div class="workflow-step bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 text-center transition-all duration-300">
+          <div class="flex justify-center items-center mb-4 h-16 w-16 rounded-full bg-green-100 dark:bg-green-900 text-green-600 dark:text-green-300 mx-auto">
+            <span class="text-2xl font-bold">3</span>
+          </div>
+          <h4 class="font-semibold text-lg mb-2">Push Changes</h4>
+          <p class="text-gray-500 dark:text-gray-400">Push your commits to your fork on GitHub or other hosting platform.</p>
+        </div>
+        <div class="workflow-step bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 text-center transition-all duration-300">
+          <div class="flex justify-center items-center mb-4 h-16 w-16 rounded-full bg-red-100 dark:bg-red-900 text-red-600 dark:text-red-300 mx-auto">
+            <span class="text-2xl font-bold">4</span>
+          </div>
+          <h4 class="font-semibold text-lg mb-2">Submit Pull Request</h4>
+          <p class="text-gray-500 dark:text-gray-400">Open a pull request to propose your changes to the main repository.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

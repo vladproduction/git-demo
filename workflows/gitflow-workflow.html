@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gitflow Workflow Explained</title>
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Use the Inter font family */
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        /* Simple animation for cards on hover */
+        .branch-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
+        }
+        /* SVG text styles */
+        .svg-text {
+            font-size: 14px;
+            font-family: 'Inter', sans-serif;
+            fill: #374151;
+        }
+        .dark .svg-text {
+            fill: #d1d5db;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 antialiased">
+
+    <!-- Main Container -->
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+        <!-- Header Section -->
+        <header class="text-center mb-12">
+            <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-4">Gitflow Workflow</h1>
+            <p class="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+                A structured and robust Git branching model for managing larger projects. Gitflow is ideal for projects with a scheduled release cycle.
+            </p>
+        </header>
+
+        <!-- Workflow Graph Section -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 sm:p-8 mb-12">
+            <h3 class="text-2xl font-bold text-center mb-6 text-gray-900 dark:text-white">
+                Visual Workflow Diagram
+            </h3>
+            <div class="flex justify-center">
+                <img src="gitflow.svg" alt="My SVG Image" width="800" height="500" />
+            </div>
+        </div>
+
+
+        <!-- Main Branch Descriptions Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Cards remain the same as before -->
+            <!-- Main Branch Card -->
+            <div class="branch-card bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 transition-all duration-300">
+                <div class="flex items-center mb-4">
+                    <svg class="h-8 w-8 text-blue-500 mr-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 19V5a2 2 0 012-2h10a2 2 0 012 2v14l-7-3.5L5 19z" />
+                    </svg>
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white">
+                        <span class="text-blue-500">main</span> Branch
+                    </h2>
+                </div>
+                <p class="text-gray-600 dark:text-gray-400 mb-4">
+                    The <code>main</code> branch (formerly <code>master</code>) stores the official release history. It should always reflect a production-ready state.
+                </p>
+                <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+                    <li>Contains stable, production code only.</li>
+                    <li>Code is merged into <code>main</code> from <code>release</code> or <code>hotfix</code> branches.</li>
+                    <li>Each commit on <code>main</code> is a new version and should be tagged (e.g., <code>v1.0</code>, <code>v2.0.1</code>).</li>
+                    <li>Direct commits to this branch are strictly forbidden.</li>
+                </ul>
+            </div>
+
+            <!-- Develop Branch Card -->
+            <div class="branch-card bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 transition-all duration-300">
+                <div class="flex items-center mb-4">
+                    <svg class="h-8 w-8 text-green-500 mr-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                    </svg>
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white">
+                        <span class="text-green-500">develop</span> Branch
+                    </h2>
+                </div>
+                <p class="text-gray-600 dark:text-gray-400 mb-4">
+                    The <code>develop</code> branch serves as the integration branch for features. It contains the latest delivered development changes for the next release.
+                </p>
+                <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+                    <li>Represents the "next release" codebase. Can be unstable at times.</li>
+                    <li>All <code>feature</code> branches are merged into this branch.</li>
+                    <li>When ready for a release, a <code>release</code> branch is created from <code>develop</code>.</li>
+                    <li>This is the main branch where developers collaborate.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Supporting Branches Section -->
+        <div class="mt-12">
+            <h3 class="text-3xl font-bold text-center mb-8 text-gray-900 dark:text-white">Supporting Branches</h3>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                
+                <!-- Feature Branch -->
+                <div class="branch-card bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 transition-all duration-300">
+                    <h4 class="text-xl font-semibold mb-3 text-purple-500">feature/*</h4>
+                    <p class="text-gray-600 dark:text-gray-400">
+                        Used to develop new features. They branch off of <code>develop</code> and must merge back into <code>develop</code>. A feature branch should never interact directly with <code>main</code>.
+                    </p>
+                </div>
+
+                <!-- Release Branch -->
+                <div class="branch-card bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 transition-all duration-300">
+                    <h4 class="text-xl font-semibold mb-3 text-cyan-500">release/*</h4>
+                    <p class="text-gray-600 dark:text-gray-400">
+                        Created from <code>develop</code> when it's ready for a release. This branch is for final testing, bug fixes, and preparing meta-data. Once ready, it's merged into both <code>main</code> (and tagged) and back into <code>develop</code>.
+                    </p>
+                </div>
+
+                <!-- Hotfix Branch -->
+                <div class="branch-card bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 transition-all duration-300">
+                    <h4 class="text-xl font-semibold mb-3 text-red-500">hotfix/*</h4>
+                    <p class="text-gray-600 dark:text-gray-400">
+                        Used for urgent fixes on a production release. They branch from <code>main</code>, and once the fix is complete, they are merged back into both <code>main</code> (with a new tag) and <code>develop</code> to ensure the fix isn't lost.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

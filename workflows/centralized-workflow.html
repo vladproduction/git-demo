@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centralized Workflow Explained</title>
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Use the Inter font family */
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        /* Simple animation for cards on hover */
+        .workflow-step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
+        }
+        /* SVG text styles */
+        .svg-text {
+            font-size: 14px;
+            font-family: 'Inter', sans-serif;
+            fill: #374151;
+            text-anchor: middle;
+        }
+        .dark .svg-text {
+            fill: #d1d5db;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 antialiased">
+
+    <!-- Main Container -->
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+        <!-- Header Section -->
+        <header class="text-center mb-12">
+            <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-4">Centralized Workflow</h1>
+            <p class="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+                A simple, SVN-like approach where a single central repository acts as the single source of truth, and developers push their changes to the `main` branch.
+            </p>
+        </header>
+
+        <!-- Overview and Advantages -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 sm:p-8 mb-12">
+            <h3 class="text-2xl font-bold text-center mb-4 text-gray-900 dark:text-white">Overview & Advantages</h3>
+            <ul class="list-disc list-inside text-gray-600 dark:text-gray-400 max-w-3xl mx-auto space-y-2 text-lg">
+                <li>🧭 <strong>Simplicity</strong>: Easy to understand and manage with a single main branch.</li>
+                <li>🔒 <strong>Control</strong>: All commits go through the central repository, helping maintain code quality.</li>
+                <li>🧑‍🤝‍🧑 <strong>Collaboration</strong>: Good for small teams where coordination is straightforward.</li>
+                <li>📄 <strong>History Clarity</strong>: Linear commit history makes tracking changes easier.</li>
+            </ul>
+        </div>
+
+
+
+
+        <!-- Workflow Graph Section -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 sm:p-8 mb-12">
+            <h3 class="text-2xl font-bold text-center mb-6 text-gray-900 dark:text-white">
+                Visual Workflow Diagram
+            </h3>
+            <div class="flex justify-center">
+                <img src="centralized.svg" alt="My SVG Image" width="800" height="800" />
+            </div>
+        </div>
+
+        <!-- The Core Concept -->
+        <div class="mb-12 text-center">
+             <h3 class="text-3xl font-bold mb-4 text-gray-900 dark:text-white">The Core Concept</h3>
+            <p class="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+                Unlike branching workflows, the Centralized Workflow doesn't use isolated branches for development. Instead, every team member works directly on the <strong><code>main</code></strong> branch. It mirrors the classic workflow of Subversion (SVN) but with the benefits of Git's local repositories.
+            </p>
+        </div>
+
+
+        <!-- Workflow Steps -->
+        <div class="mt-12">
+            <h3 class="text-3xl font-bold text-center mb-8 text-gray-900 dark:text-white">Developer Workflow</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Step 1: Clone or Pull -->
+                <div class="workflow-step bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 text-center transition-all duration-300">
+                    <div class="flex justify-center items-center mb-4 h-16 w-16 rounded-full bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 mx-auto">
+                        <span class="text-2xl font-bold">1</span>
+                    </div>
+                    <h4 class="font-semibold text-lg mb-2">Sync with Central</h4>
+                    <p class="text-gray-500 dark:text-gray-400">Start by cloning the central repository or, if you already have it, running <code>git pull</code> to get the latest changes.</p>
+                </div>
+                 <!-- Step 2: Edit -->
+                <div class="workflow-step bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 text-center transition-all duration-300">
+                     <div class="flex justify-center items-center mb-4 h-16 w-16 rounded-full bg-purple-100 dark:bg-purple-900 text-purple-600 dark:text-purple-300 mx-auto">
+                        <span class="text-2xl font-bold">2</span>
+                    </div>
+                    <h4 class="font-semibold text-lg mb-2">Make Changes</h4>
+                    <p class="text-gray-500 dark:text-gray-400">Edit, add, and delete files to implement the desired feature or fix.</p>
+                </div>
+                 <!-- Step 3: Commit -->
+                <div class="workflow-step bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 text-center transition-all duration-300">
+                     <div class="flex justify-center items-center mb-4 h-16 w-16 rounded-full bg-green-100 dark:bg-green-900 text-green-600 dark:text-green-300 mx-auto">
+                        <span class="text-2xl font-bold">3</span>
+                    </div>
+                    <h4 class="font-semibold text-lg mb-2">Commit Locally</h4>
+                    <p class="text-gray-500 dark:text-gray-400">Commit your changes to your local repository. You can make as many commits as you need.</p>
+                </div>
+                 <!-- Step 4: Push -->
+                <div class="workflow-step bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 text-center transition-all duration-300">
+                     <div class="flex justify-center items-center mb-4 h-16 w-16 rounded-full bg-red-100 dark:bg-red-900 text-red-600 dark:text-red-300 mx-auto">
+                        <span class="text-2xl font-bold">4</span>
+                    </div>
+                    <h4 class="font-semibold text-lg mb-2">Push to Central</h4>
+                    <p class="text-gray-500 dark:text-gray-400">Once ready, push your commits to the central repository. If others have pushed changes, Git will require you to pull and resolve conflicts locally before pushing.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Basic Git Commands Section -->
+    <div class="mt-16 bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 sm:p-8">
+        <h3 class="text-2xl font-bold text-center mb-6 text-gray-900 dark:text-white">Basic Git Commands</h3>
+        <div class="max-w-3xl mx-auto text-lg text-gray-700 dark:text-gray-300 space-y-4">
+            <div>
+                <strong>Clone Repository:</strong>
+                <pre class="bg-gray-100 dark:bg-gray-700 rounded p-3 text-sm mt-1 overflow-x-auto"><code>git clone https://github.com/your-org/project.git</code></pre>
+            </div>
+            <div>
+                <strong>Get Latest Changes:</strong>
+                <pre class="bg-gray-100 dark:bg-gray-700 rounded p-3 text-sm mt-1 overflow-x-auto"><code>git pull origin main</code></pre>
+            </div>
+            <div>
+                <strong>Stage & Commit Changes:</strong>
+                <pre class="bg-gray-100 dark:bg-gray-700 rounded p-3 text-sm mt-1 overflow-x-auto"><code>git add .<br>git commit -m "Your message"</code></pre>
+            </div>
+            <div>
+                <strong>Push to Central:</strong>
+                <pre class="bg-gray-100 dark:bg-gray-700 rounded p-3 text-sm mt-1 overflow-x-auto"><code>git push origin main</code></pre>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

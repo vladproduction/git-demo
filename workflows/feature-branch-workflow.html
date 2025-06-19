@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feature Branch Workflow Explained</title>
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Use the Inter font family */
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        /* Simple animation for cards on hover */
+        .branch-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
+        }
+        /* SVG text styles */
+        .svg-text {
+            font-size: 14px;
+            font-family: 'Inter', sans-serif;
+            fill: #374151;
+        }
+        .dark .svg-text {
+            fill: #d1d5db;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 antialiased">
+
+    <!-- Main Container -->
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+        <!-- Header Section -->
+        <header class="text-center mb-12">
+            <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-4">Feature Branch Workflow</h1>
+            <p class="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+                A simple and effective workflow where all feature development takes place in dedicated branches, keeping the `main` branch stable.
+            </p>
+        </header>
+
+        <!-- Workflow Graph Section -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 sm:p-8 mb-12">
+            <h3 class="text-2xl font-bold text-center mb-6 text-gray-900 dark:text-white">
+                Visual Workflow Diagram
+            </h3>
+            <div class="flex justify-center">
+                <img src="feature.svg" alt="My SVG Image" width="800" height="500" />
+            </div>
+        </div>
+
+        <!-- Branch Descriptions Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Main Branch Card -->
+            <div class="branch-card bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 transition-all duration-300">
+                <div class="flex items-center mb-4">
+                    <svg class="h-8 w-8 text-blue-500 mr-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 19V5a2 2 0 012-2h10a2 2 0 012 2v14l-7-3.5L5 19z" />
+                    </svg>
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white">
+                        <span class="text-blue-500">main</span> Branch
+                    </h2>
+                </div>
+                <p class="text-gray-600 dark:text-gray-400 mb-4">
+                    The <code>main</code> branch contains the official project history and should always be stable and deployable.
+                </p>
+                <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+                    <li>This is the single source of truth for the project.</li>
+                    <li>All new work starts by creating a branch from <code>main</code>.</li>
+                    <li>Code is only added to <code>main</code> by merging completed feature branches.</li>
+                    <li>Direct commits to <code>main</code> are heavily discouraged.</li>
+                </ul>
+            </div>
+
+            <!-- Feature Branch Card -->
+            <div class="branch-card bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 transition-all duration-300">
+                <div class="flex items-center mb-4">
+                    <svg class="h-8 w-8 text-purple-500 mr-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.5L15.232 5.232z" />
+                    </svg>
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white">
+                        <span class="text-purple-500">feature/*</span> Branches
+                    </h2>
+                </div>
+                <p class="text-gray-600 dark:text-gray-400 mb-4">
+                    Each new piece of work, whether a new feature, bugfix, or chore, is done in a dedicated branch.
+                </p>
+                <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+                    <li>Created from the latest version of the <code>main</code> branch.</li>
+                    <li>Branches should have descriptive names (e.g., <code>feature/add-login</code>, <code>fix/header-bug</code>).</li>
+                    <li>Work is done in isolation, preventing unstable code from affecting <code>main</code>.</li>
+                    <li>Once complete, the branch is merged back into <code>main</code>, often via a Pull Request.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Pull Request Section -->
+        <div class="mt-12 bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 sm:p-8">
+            <h3 class="text-3xl font-bold text-center mb-4 text-gray-900 dark:text-white">The Role of Pull Requests</h3>
+            <p class="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto text-center">
+                Pull Requests (or Merge Requests) are the cornerstone of the Feature Branch Workflow. Instead of merging directly, a developer opens a Pull Request to initiate a discussion about their changes before integrating them into the <code>main</code> branch.
+            </p>
+            <div class="mt-8 flex flex-col md:flex-row justify-center items-center gap-8">
+                <div class="text-center">
+                    <div class="flex justify-center items-center mb-2 h-16 w-16 rounded-full bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 mx-auto">
+                        <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg>
+                    </div>
+                    <h4 class="font-semibold text-lg">Code Review</h4>
+                    <p class="text-gray-500 dark:text-gray-400">Allows team members to review and discuss the changes.</p>
+                </div>
+                 <div class="text-center">
+                    <div class="flex justify-center items-center mb-2 h-16 w-16 rounded-full bg-green-100 dark:bg-green-900 text-green-600 dark:text-green-300 mx-auto">
+                        <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                    </div>
+                    <h4 class="font-semibold text-lg">Automated Checks</h4>
+                    <p class="text-gray-500 dark:text-gray-400">Triggers automated builds and tests to run.</p>
+                </div>
+                 <div class="text-center">
+                    <div class="flex justify-center items-center mb-2 h-16 w-16 rounded-full bg-purple-100 dark:bg-purple-900 text-purple-600 dark:text-purple-300 mx-auto">
+                        <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" /></svg>
+                    </div>
+                    <h4 class="font-semibold text-lg">Controlled Merge</h4>
+                    <p class="text-gray-500 dark:text-gray-400">Prevents direct pushes and ensures quality control.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Git Workflows Overview</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 antialiased">
+
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <header class="text-center mb-12">
+      <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-4">Git Workflows</h1>
+      <p class="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+        A collection of visual explanations for the most popular Git workflows used in software development teams.
+      </p>
+    </header>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      
+	  <a href="centralized-workflow.html" class="block bg-white dark:bg-gray-800 rounded-lg shadow p-6 hover:shadow-xl transition">
+        <h2 class="text-xl font-semibold mb-2">Centralized Workflow</h2>
+        <p class="text-gray-500 dark:text-gray-400">SVN-style single-source model where all changes go to the main branch.</p>
+      </a>
+
+      <a href="integration-manager-workflow.html" class="block bg-white dark:bg-gray-800 rounded-lg shadow p-6 hover:shadow-xl transition">
+        <h2 class="text-xl font-semibold mb-2">Integration Manager Workflow</h2>
+        <p class="text-gray-500 dark:text-gray-400">Contributors fork and push changes via pull requests, with a single integrator.</p>
+      </a>
+
+      <a href="dictator-lieutenants-workflow.html" class="block bg-white dark:bg-gray-800 rounded-lg shadow p-6 hover:shadow-xl transition">
+        <h2 class="text-xl font-semibold mb-2">Dictator and Lieutenants</h2>
+        <p class="text-gray-500 dark:text-gray-400">Used in large-scale projects, changes flow from devs to lieutenants to dictator.</p>
+      </a>
+
+      <a href="forking-workflow.html" class="block bg-white dark:bg-gray-800 rounded-lg shadow p-6 hover:shadow-xl transition">
+        <h2 class="text-xl font-semibold mb-2">Forking Workflow</h2>
+        <p class="text-gray-500 dark:text-gray-400">Ideal for open source; each contributor works in their fork and sends PRs.</p>
+      </a>
+
+      <a href="github-flow-workflow.html" class="block bg-white dark:bg-gray-800 rounded-lg shadow p-6 hover:shadow-xl transition">
+        <h2 class="text-xl font-semibold mb-2">GitHub Flow</h2>
+        <p class="text-gray-500 dark:text-gray-400">A simple branch-based workflow perfect for CI/CD and web services.</p>
+      </a>
+
+      <a href="gitlab-flow-workflow.html" class="block bg-white dark:bg-gray-800 rounded-lg shadow p-6 hover:shadow-xl transition">
+        <h2 class="text-xl font-semibold mb-2">GitLab Flow</h2>
+        <p class="text-gray-500 dark:text-gray-400">Environment-based workflow with promotion paths like dev → staging → prod.</p>
+      </a>
+
+      <a href="trunk-based-dev-workflow.html" class="block bg-white dark:bg-gray-800 rounded-lg shadow p-6 hover:shadow-xl transition">
+        <h2 class="text-xl font-semibold mb-2">Trunk-Based Development</h2>
+        <p class="text-gray-500 dark:text-gray-400">All work goes into trunk (main) with short-lived branches and continuous integration.</p>
+      </a>
+	  
+	  <a href="feature-branch-workflow.html" class="block bg-white dark:bg-gray-800 rounded-lg shadow p-6 hover:shadow-xl transition">
+        <h2 class="text-xl font-semibold mb-2">Feature-Branch Workflow</h2>
+        <p class="text-gray-500 dark:text-gray-400">A simple and effective workflow where all feature development takes place in dedicated branches, keeping the `main` branch stable.</p>
+      </a>
+	  
+	  <a href="gitflow-workflow.html" class="block bg-white dark:bg-gray-800 rounded-lg shadow p-6 hover:shadow-xl transition">
+        <h2 class="text-xl font-semibold mb-2">Gitflow Workflow</h2>
+        <p class="text-gray-500 dark:text-gray-400">A structured and robust Git branching model for managing larger projects. Gitflow is ideal for projects with a scheduled release cycle.</p>
+      </a>
+	  
+    </div>
+  </div>
+
+</body>
+</html>
